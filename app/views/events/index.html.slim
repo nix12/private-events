@@ -1,0 +1,8 @@
+h3 Future Events
+- @events.each do |event|
+	p = event.name if event.date.future?
+
+
+h3 Past Events
+- @events.each do |event|
+	p = event.name if event.date.past?

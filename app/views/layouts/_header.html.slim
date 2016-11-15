@@ -2,7 +2,10 @@ header.navbar.navbar-default.navbar-fixed-top
 	div.container
 		nav
 			ul.nav.nav-pills.navbar-right
-				li = link_to 'Events', '#'
-				li = link_to 'Create event', '#'
-				li = link_to 'Login', '#'
-			
+				li = link_to 'Events', events_path
+				li = link_to 'Create event', new_event_path
+
+				- if logged_in? 
+					li = link_to 'Logout', logout_path, method: :delete
+				- else
+					li = link_to 'Login', login_path

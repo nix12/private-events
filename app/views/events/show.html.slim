@@ -1,0 +1,10 @@
+h2 = @event.name
+
+p Host: #{ @event.creator.name }
+p Description: #{ @event.description }
+p Date: #{ @event.date }
+
+h3 attendence (#{@event.event_attendences.count})
+ul
+	- @event.event_attendences.each do |attendee|
+	 li = attendee

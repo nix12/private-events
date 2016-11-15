@@ -1,2 +1,23 @@
-h1 hsd;
-h1 ksjaaaaaaf
+p = @user.name
+p = @user.email
+
+
+form action=user_path
+	input type='submit' name='prev' value='Prev' class='btn btn-primary'
+	input type='submit' name='next' value='Next' class='btn btn-primary'
+
+h1 Events
+- @events.each do |event|
+	p = event.name
+
+
+
+
+
+
+/ ul 
+/ 	- @prev_events.each do |event|
+/ 		li = p event.name
+		
+/ 		<hr />
+

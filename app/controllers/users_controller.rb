@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :require_login, only: [:show]
+
 	def new
 		@user = User.new
 	end
@@ -15,6 +17,15 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+
+		if params[:prev]
+   		@events = current_user.events.where('date <= ?', Date.today)
+		else
+			@events = current_user.events.where('date >= ?', Date.tomorrow)
+		end
+
+		
+		# @prev_events = current_user.prev_events
 	end
 
 	private
